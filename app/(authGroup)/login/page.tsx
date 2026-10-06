@@ -5,6 +5,7 @@ import { ArrowRight, ShieldCheck, Wrench } from "lucide-react";
 import { LoginForm } from "../_components/login-form";
 import { LoginBrand } from "../_components/login-brand";
 import { ServiceCard } from "../_components/service-card";
+import { Suspense } from "react";
 
 export default function LoginPage() {
 	return (
@@ -92,7 +93,9 @@ export default function LoginPage() {
 						</div>
 
 						{/* Login Form */}
-						<LoginForm />
+						<Suspense fallback={null}>
+							<LoginForm />
+						</Suspense>
 
 						{/* Register */}
 						<p className="mt-8 text-center text-sm text-slate-500">
