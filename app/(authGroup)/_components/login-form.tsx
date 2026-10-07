@@ -16,6 +16,7 @@ import { Label } from "@/components/ui/label";
 import { loginAction, LoginState } from "../_actions/login";
 import { useSearchParams } from "next/navigation";
 import { toast } from "sonner";
+import { GoogleLoginButton } from "./google-login-button";
 
 
 const initialState: LoginState = {
@@ -161,14 +162,9 @@ export function LoginForm() {
             </div>
 
             {/* Google */}
-            <Button
-                type="button"
-                variant="outline"
-                className="h-12 w-full rounded-xl border-slate-200 bg-white font-medium text-slate-700 shadow-sm hover:bg-slate-50"
-            >
-                <GoogleIcon />
-                Continue with Google
-            </Button>
+            <div className="flex justify-center">
+                <GoogleLoginButton />
+            </div>
         </div>
     );
 }

@@ -20,6 +20,7 @@ import {
 	registerAction,
 	type RegisterState,
 } from "../_actions/register";
+import { GoogleLoginButton } from "./google-login-button";
 
 const initialState: RegisterState = {
 	success: false,
@@ -228,36 +229,9 @@ export function RegisterForm() {
 				</div>
 			</div>
 
-			<Button
-				type="button"
-				variant="outline"
-				className="h-12 w-full rounded-xl border-slate-200 bg-white font-medium text-slate-700 shadow-sm hover:bg-slate-50"
-			>
-				<svg
-					className="size-5"
-					viewBox="0 0 24 24"
-					aria-hidden="true"
-				>
-					<path
-						fill="#4285F4"
-						d="M21.35 12.23c0-.79-.07-1.55-.2-2.27H12v4.3h5.24a4.48 4.48 0 0 1-1.95 2.94v2.45h3.15c1.84-1.69 2.91-4.18 2.91-7.42Z"
-					/>
-					<path
-						fill="#34A853"
-						d="M12 21.5c2.63 0 4.84-.87 6.45-2.35l-3.15-2.45c-.87.58-1.98.92-3.3.92-2.54 0-4.69-1.72-5.46-4.03H3.28v2.53A9.74 9.74 0 0 0 12 21.5Z"
-					/>
-					<path
-						fill="#FBBC05"
-						d="M6.54 13.59A5.85 5.85 0 0 1 6.23 12c0-.55.1-1.09.31-1.59V7.88H3.28A9.74 9.74 0 0 0 2.25 12c0 1.57.38 3.05 1.03 4.12l3.26-2.53Z"
-					/>
-					<path
-						fill="#EA4335"
-						d="M12 6.38c1.43 0 2.72.49 3.73 1.46l2.8-2.8C16.84 3.48 14.63 2.5 12 2.5a9.74 9.74 0 0 0-8.72 5.38l3.26 2.53C7.31 8.1 9.46 6.38 12 6.38Z"
-					/>
-				</svg>
-
-				Continue with Google
-			</Button>
+			<div className="flex justify-center">
+				<GoogleLoginButton />
+			</div>
 
 			<p className="mt-6 text-center text-sm text-slate-500">
 				Already have an account?{" "}
