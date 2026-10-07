@@ -1,7 +1,7 @@
 import { Header } from "@/components/shared/navbar";
 import { getMe } from "@/service/getMe";
 
-export default async function DashboardLayout({
+export default async function AuthLayout({
     children,
 }: Readonly<{
     children: React.ReactNode

@@ -25,6 +25,7 @@ const initialState: LoginState = {
 
 export function LoginForm() {
     const [showPassword, setShowPassword] = useState(false);
+    const [email, setEmail] = useState("");
 
     const searchParams = useSearchParams()
     const redirectTo = searchParams.get("redirectTo") ?? ""
@@ -46,6 +47,7 @@ export function LoginForm() {
                 <div className="space-y-2">
                     <Label
                         htmlFor="email"
+
                         className="text-sm font-medium text-slate-700"
                     >
                         Email address
@@ -60,6 +62,8 @@ export function LoginForm() {
                             type="email"
                             placeholder="Enter Your Email...."
                             autoComplete="email"
+                            value={email}
+                            onChange={(event) => setEmail(event.target.value)}
                             required
                             className="h-12 border-slate-200 bg-white pl-10 shadow-sm focus-visible:border-sky-500 focus-visible:ring-sky-500/20"
                         />
@@ -77,7 +81,9 @@ export function LoginForm() {
                         </Label>
 
                         <Link
-                            href="/forgot-password"
+                            href={email
+                                ? `/forgot-password?email=${encodeURIComponent(email)}`
+                                : "/forgot-password"}
                             className="text-sm font-medium text-sky-600 hover:text-sky-700 hover:underline"
                         >
                             Forgot password?

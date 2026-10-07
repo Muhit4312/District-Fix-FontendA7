@@ -1,16 +1,15 @@
 import { Header } from "@/components/shared/navbar";
 import { getMe } from "@/service/getMe";
 
-export default async function DashboardLayout({
+export default async function PublicLayout({
     children,
 }: Readonly<{
     children: React.ReactNode
 }>) {
-
     const user = await getMe();
     return (
         <div>
-            <Header user={user} ></Header>
+            <Header user={user}></Header>
             {children}
         </div>
     )
