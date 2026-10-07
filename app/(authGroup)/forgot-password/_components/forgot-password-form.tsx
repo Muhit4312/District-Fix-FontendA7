@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useActionState, useEffect } from "react";
+import { useActionState, useEffect, useState } from "react";
 import { ArrowRight, Mail, ShieldCheck } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
@@ -24,9 +24,11 @@ const initialState: ForgotPasswordState = {
 };
 
 export function ForgotPasswordForm({
-	email,
+	email: initialEmail,
 }: ForgotPasswordFormProps) {
 	const router = useRouter();
+
+	const [email, setEmail] = useState(initialEmail);
 
 	const [state, formAction, isPending] = useActionState(
 		forgotPasswordAction,
@@ -49,9 +51,32 @@ export function ForgotPasswordForm({
 		}
 	}, [state, router]);
 
+	const handleEmailChange = (
+		event: React.ChangeEvent<HTMLInputElement>,
+	) => {
+		const value = event.target.value;
+
+		setEmail(value);
+
+		const params = new URLSearchParams(window.location.search);
+
+		if (value) {
+			params.set("email", value);
+		} else {
+			params.delete("email");
+		}
+
+		const query = params.toString();
+
+		window.history.replaceState(
+			null,
+			"",
+			query ? `${window.location.pathname}?${query}` : window.location.pathname,
+		);
+	};
+
 	return (
 		<div>
-			
 			<form action={formAction} className="space-y-5">
 				<div className="space-y-2">
 					<Label
@@ -68,7 +93,8 @@ export function ForgotPasswordForm({
 							id="email"
 							name="email"
 							type="email"
-							defaultValue={email}
+							value={email}
+							onChange={handleEmailChange}
 							placeholder="Enter Your Email..."
 							autoComplete="email"
 							required

@@ -43,5 +43,10 @@ export async function forgotPasswordAction(
 		};
 	}
 
-	return result
+	return {
+		success: true,
+		statusCode: result.statusCode,
+		message: result.message,
+		email,
+	};
 }
