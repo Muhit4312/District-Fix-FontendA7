@@ -1,5 +1,7 @@
 "use server";
 
+import { redirect } from "next/navigation";
+
 export type ForgotPasswordState = {
 	success: boolean;
 	statusCode?: number;
@@ -43,10 +45,7 @@ export async function forgotPasswordAction(
 		};
 	}
 
-	return {
-		success: true,
-		statusCode: result.statusCode,
-		message: result.message,
-		email,
-	};
+	redirect(`/reset-password?email=${encodeURIComponent(email)}`)
+
+	
 }

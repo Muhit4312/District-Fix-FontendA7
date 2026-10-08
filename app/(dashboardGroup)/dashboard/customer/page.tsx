@@ -1,11 +1,8 @@
 import React from 'react';
+import CustomerOverview from './_components/customer-overview';
 
-const CustomerDashborad = () => {
-    return (
-        <div>
-            Customer Dashboard
-        </div>
-    );
+const CustomerDashboardPage = () => {
+    return <CustomerOverview/>;
 };
 
-export default CustomerDashborad;
+export default CustomerDashboardPage;

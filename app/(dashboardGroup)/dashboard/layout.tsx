@@ -15,16 +15,20 @@ export default function DashboardLayout({
 
 function DashboardLoading() {
     return (
-        <main className="flex min-h-screen items-center justify-center bg-slate-50">
-            <div className="flex flex-col items-center">
-                <div className="flex items-center gap-1.5">
-                    <span className="size-2.5 animate-bounce rounded-full bg-sky-500 [animation-delay:-0.3s]" />
-                    <span className="size-2.5 animate-bounce rounded-full bg-sky-500 [animation-delay:-0.15s]" />
-                    <span className="size-2.5 animate-bounce rounded-full bg-sky-500" />
+        <main className="flex min-h-screen items-center justify-center bg-white">
+            <div className="w-full max-w-xs px-6">
+                <div className="mb-5 flex justify-center">
+                    <div className="size-9 animate-pulse rounded-xl bg-sky-100" />
                 </div>
 
-                <p className="mt-4 text-sm font-medium text-slate-500">
-                    Loading DistrictFix
+                <div className="space-y-3">
+                    <div className="h-3 w-full animate-pulse rounded-full bg-slate-100" />
+                    <div className="mx-auto h-3 w-4/5 animate-pulse rounded-full bg-slate-100" />
+                    <div className="mx-auto h-3 w-3/5 animate-pulse rounded-full bg-slate-100" />
+                </div>
+
+                <p className="mt-6 text-center text-xs text-slate-400">
+                    Loading...
                 </p>
             </div>
         </main>
