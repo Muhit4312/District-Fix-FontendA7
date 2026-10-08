@@ -16,7 +16,7 @@ export default function PendingServiceItem({
 }: PendingServiceItemProps) {
 	return (
 		<Link
-			href={`/dashboard/customer/services/${service.id}`}
+			href={`/dashboard/customer/my-services/${service.id}`}
 			className="block px-5 py-4 transition hover:bg-slate-50"
 		>
 			<div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">

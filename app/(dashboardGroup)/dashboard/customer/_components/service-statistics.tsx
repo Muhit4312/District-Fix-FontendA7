@@ -2,6 +2,7 @@ import {
 	CheckCircle2,
 	Clock3,
 	Files,
+	FilesIcon,
 	LoaderCircle,
 } from "lucide-react";
 
@@ -24,15 +25,15 @@ export default function ServiceStatistics({
 			<ServiceStatCard
 				title="All Services"
 				value={statistics.all}
-				href="/dashboard/customer/services"
-				icon={Files}
+				href="/dashboard/customer/my-services"
+				icon={FilesIcon}
 				iconClassName="bg-slate-100 text-slate-600"
 			/>
 
 			<ServiceStatCard
 				title="Pending"
 				value={statistics.pending}
-				href="/dashboard/customer/services?status=PENDING"
+				href="/dashboard/customer/my-services?status=PENDING"
 				icon={Clock3}
 				iconClassName="bg-amber-50 text-amber-600"
 			/>
@@ -40,7 +41,7 @@ export default function ServiceStatistics({
 			<ServiceStatCard
 				title="In Progress"
 				value={statistics.inProgress}
-				href="/dashboard/customer/services?status=IN_PROGRESS"
+				href="/dashboard/customer/my-services?status=IN_PROGRESS"
 				icon={LoaderCircle}
 				iconClassName="bg-sky-50 text-sky-600"
 			/>
@@ -48,7 +49,7 @@ export default function ServiceStatistics({
 			<ServiceStatCard
 				title="Completed"
 				value={statistics.completed}
-				href="/dashboard/customer/services?status=COMPLETED"
+				href="/dashboard/customer/my-services?status=COMPLETED"
 				icon={CheckCircle2}
 				iconClassName="bg-emerald-50 text-emerald-600"
 			/>

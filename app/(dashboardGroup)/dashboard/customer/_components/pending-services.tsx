@@ -26,7 +26,7 @@ export default function PendingServices({
 				</div>
 
 				<Link
-					href="/dashboard/customer/services?status=PENDING"
+					href="/dashboard/customer/my-services?status=PENDING"
 					className="flex items-center gap-1 text-sm font-medium text-sky-600 transition hover:text-sky-700"
 				>
 					View all

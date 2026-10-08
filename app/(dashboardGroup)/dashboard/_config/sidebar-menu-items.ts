@@ -23,7 +23,7 @@ export const sideMenuItems = {
 		},
 		{
 			title: "My Services",
-			href: "/dashboard/customer/services",
+			href: "/dashboard/customer/my-services",
 			icon: ClipboardList,
 		},
 		{
