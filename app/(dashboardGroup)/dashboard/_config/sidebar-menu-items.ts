@@ -36,11 +36,11 @@ export const sideMenuItems = {
 			href: "/dashboard/customer/payment",
 			icon: CreditCard,
 		},
-		{
-			title: "Reviews",
-			href: "/dashboard/customer/reviews",
-			icon: Star,
-		},
+		// {
+		// 	title: "Reviews",
+		// 	href: "/dashboard/customer/reviews",
+		// 	icon: Star,
+		// },
 	],
 
 	PLUMBER: [
@@ -51,7 +51,7 @@ export const sideMenuItems = {
 		},
 		{
 			title: "My Jobs",
-			href: "/dashboard/worker/jobs",
+			href: "/dashboard/worker/my-jobs",
 			icon: BriefcaseBusiness,
 		},
 		{
@@ -74,7 +74,7 @@ export const sideMenuItems = {
 		},
 		{
 			title: "My Jobs",
-			href: "/dashboard/worker/jobs",
+			href: "/dashboard/worker/my-jobs",
 			icon: BriefcaseBusiness,
 		},
 		{

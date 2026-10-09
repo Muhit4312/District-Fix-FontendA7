@@ -47,8 +47,7 @@ export async function getOverviewServices(
 	const result: ServiceRequestResponse =
 		await res.json();
 
-	console.log("Overview API status:", res.status);
-	console.log("Overview API response:", result);
+	
 
 	if (!res.ok) {
 		throw new Error(

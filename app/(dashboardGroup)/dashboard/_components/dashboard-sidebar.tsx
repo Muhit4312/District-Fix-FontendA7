@@ -4,6 +4,7 @@ import {
 	Home,
 	LogOut,
 	Settings,
+	User,
 } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 
@@ -24,6 +25,7 @@ import {
 	roleLabel,
 	sideMenuItems,
 } from "../_config/sidebar-menu-items";
+import { logout } from "@/service/logout";
 
 type UserRole =
 	| "CUSTOMER"
@@ -57,7 +59,7 @@ export default function DashboardSidebar({
 	};
 
 	const handleLogout = () => {
-		router.push("/logout");
+		logout()
 	};
 
 	return (
@@ -134,6 +136,18 @@ export default function DashboardSidebar({
 									<Settings className="size-4" />
 
 									<span>Settings</span>
+								</SidebarMenuButton>
+								<SidebarMenuButton
+									tooltip="Profile"
+									onClick={() =>
+										router.push(
+											"/dashboard/profile",
+										)
+									}
+								>
+									<User className="size-4" />
+
+									<span>Profile</span>
 								</SidebarMenuButton>
 							</SidebarMenuItem>
 						</SidebarMenu>

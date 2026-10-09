@@ -1,11 +1,11 @@
-import React from 'react';
+import { Suspense } from "react";
+import WorkerOverview from "./_components/worker-overview";
+import WorkerLoading from "./loading";
 
-const WorkerDashboard = () => {
-    return (
-        <div>
-            WorkerDashboard
-        </div>
-    );
-};
-
-export default WorkerDashboard;
+export default function WorkerDashboardPage() {
+	return (
+		<Suspense fallback={<WorkerLoading />}>
+			<WorkerOverview />
+		</Suspense>
+	);
+}
