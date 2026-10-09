@@ -33,7 +33,7 @@ export const sideMenuItems = {
 		},
 		{
 			title: "Payments",
-			href: "/dashboard/customer/payments",
+			href: "/dashboard/customer/payment",
 			icon: CreditCard,
 		},
 		{

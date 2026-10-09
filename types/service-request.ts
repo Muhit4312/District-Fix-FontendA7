@@ -86,3 +86,10 @@ export type ServiceRequestResponse = {
 		meta: ServiceMeta;
 	};
 };
+
+export type SingleServiceRequestResponse = {
+	success: boolean;
+	statusCode: number;
+	message: string;
+	data: ServiceRequest;
+};

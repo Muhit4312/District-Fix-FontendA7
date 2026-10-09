@@ -1,5 +1,6 @@
 import Link from "next/link";
 import {
+	ArrowUpRight,
 	CheckCircle2,
 	Clock3,
 	Files,
@@ -11,10 +12,10 @@ type ServiceStatCardProps = {
 	value: number;
 	href: string;
 	iconType:
-		| "all"
-		| "pending"
-		| "inProgress"
-		| "completed";
+	| "all"
+	| "pending"
+	| "inProgress"
+	| "completed";
 	isActive?: boolean;
 };
 
@@ -65,29 +66,22 @@ export default function ServiceStatCard({
 	return (
 		<Link
 			href={href}
-			className={`group flex items-start gap-4 rounded-2xl border bg-white px-5 py-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md ${
-				isActive
-					? config.activeClass
-					: "border-slate-200/80"
-			}`}
+			className={`group flex items-start gap-4 rounded-2xl border bg-white px-5 py-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md ${isActive
+				? config.activeClass
+				: "border-slate-200/80"
+				}`}
 		>
-			<div
-				className={`flex size-10 shrink-0 items-center justify-center rounded-xl ${config.iconClass}`}
-			>
-				<Icon className="size-5" />
-			</div>
-
 			<div className="min-w-0 flex-1">
 				<p className="text-sm font-medium leading-5 text-slate-500">
-					{title}
+					{title}{" "}
+					<span className="font-bold text-slate-900">
+						({value})
+					</span>
 				</p>
 
-				<p className="mt-0.5 text-2xl font-bold leading-7 tracking-tight text-slate-900">
-					{value}
-				</p>
-
-				<p className="mt-1 text-xs text-slate-400 transition-colors group-hover:text-slate-500">
+				<p className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-slate-400 transition-colors group-hover:text-sky-600">
 					View services
+					<ArrowUpRight className="size-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
 				</p>
 			</div>
 		</Link>
