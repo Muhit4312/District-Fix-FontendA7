@@ -129,15 +129,16 @@ export const sideMenuItems = {
 			icon: MapPin,
 		},
 		{
-			title: "Service Requests",
-			href: "/dashboard/admin/requests",
-			icon: ClipboardList,
+			title: "Service Holders",
+			href: "/dashboard/admin/service-holders",
+			icon: Building2,
 		},
 		{
-			title: "Workers",
-			href: "/dashboard/admin/workers",
-			icon: Wrench,
+			title: "Service Holders Applications",
+			href: "/dashboard/admin/service-holders/applications",
+			icon: FileCheck2,
 		},
+		
 	],
 
 	SUPER_ADMIN: [
@@ -157,14 +158,14 @@ export const sideMenuItems = {
 			icon: MapPin,
 		},
 		{
-			title: "Service Requests",
-			href: "/dashboard/admin/requests",
-			icon: ClipboardList,
+			title: "Service Holders",
+			href: "/dashboard/admin/service-holders",
+			icon: Building2,
 		},
 		{
-			title: "Workers",
-			href: "/dashboard/admin/workers",
-			icon: Wrench,
+			title: "Service Holders Applications",
+			href: "/dashboard/admin/service-holders/applications",
+			icon: FileCheck2,
 		},
 		{
 			title: "Admin Management",
