@@ -37,11 +37,11 @@ const navLinks = [
         href: "/services",
     },
     {
-        label: "About",
+        label: "About Us",
         href: "/about",
     },
     {
-        label: "Contact",
+        label: "Contact Us",
         href: "/contact",
         icon: Phone,
     },
@@ -232,7 +232,7 @@ export function Header({ user }: { user?: UserResponse }) {
                         <>
                             <Link
                                 href="/login"
-                                className="inline-flex h-10 items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 text-sm font-semibold text-slate-700 transition-colors hover:border-sky-200 hover:bg-sky-50 hover:text-sky-600"
+                                className="inline-flex h-10 items-center gap-2 rounded-lg border border-sky-300 bg-white px-4 text-sm font-semibold text-slate-700 transition-colors hover:border-sky-200 hover:bg-sky-50 hover:text-sky-600"
                             >
                                 <UserRound className="size-4" />
                                 Login
