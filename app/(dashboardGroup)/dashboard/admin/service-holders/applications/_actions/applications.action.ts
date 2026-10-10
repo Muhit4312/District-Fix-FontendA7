@@ -84,3 +84,4 @@ export async function getApplications(
 
 	return result;
 }
+

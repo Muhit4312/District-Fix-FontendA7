@@ -1,16 +1,16 @@
+
 import Link from "next/link";
 import {
 	ArrowLeft,
 	ArrowRight,
 	CalendarDays,
+	Eye,
 	FileSearch,
 	MapPin,
 	UserRound,
 } from "lucide-react";
 import { Application } from "../_actions/applications.action";
 
-
-    
 interface ApplicationsListProps {
 	applications: Application[];
 	page: number;
@@ -72,12 +72,15 @@ export default function ApplicationsList({
 				<div className="flex size-16 items-center justify-center rounded-2xl bg-sky-50 text-sky-600">
 					<FileSearch className="size-8" />
 				</div>
+
 				<h3 className="mt-4 font-semibold text-slate-900">
 					No applications found
 				</h3>
+
 				<p className="mt-1 max-w-sm text-sm text-slate-500">
 					Try changing your search or status filter.
 				</p>
+
 				<Link
 					href="/dashboard/admin/service-holders/applications"
 					className="mt-4 text-sm font-semibold text-sky-700 hover:text-sky-800"
@@ -106,6 +109,7 @@ export default function ApplicationsList({
 									<h3 className="break-words text-sm font-semibold text-slate-900">
 										{application.user?.name || "Unknown applicant"}
 									</h3>
+
 									<span
 										className={`rounded-full px-2.5 py-1 text-[11px] font-semibold ring-1 ring-inset ${statusStyle(application.status)}`}
 									>
@@ -133,10 +137,10 @@ export default function ApplicationsList({
 
 						<Link
 							href={`/dashboard/admin/service-holders/applications/${application.id}`}
-							className="inline-flex h-9 items-center justify-center gap-2 self-start rounded-lg border border-slate-200 bg-white px-3 text-xs font-semibold text-slate-700 transition hover:border-sky-300 hover:bg-sky-50 hover:text-sky-700 sm:self-center"
+							className="inline-flex h-9 items-center justify-center gap-2 self-start rounded-lg border border-sky-200 bg-white px-3 text-xs font-semibold text-sky-700 transition hover:border-sky-300 hover:bg-sky-50 sm:self-center"
 						>
-							Review
-							<ArrowRight className="size-3.5" />
+							<Eye className="size-4" />
+							View Details
 						</Link>
 					</div>
 				))}
@@ -180,3 +184,4 @@ export default function ApplicationsList({
 		</>
 	);
 }
+
