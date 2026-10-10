@@ -174,11 +174,10 @@ export function Footer() {
 				{/* Bottom bar */}
 				<div className="flex flex-col gap-4 border-t border-white/15 py-6 sm:flex-row sm:items-center sm:justify-between">
 					<p className="text-center text-sm leading-6 text-slate-300 sm:text-left sm:text-base">
-						© {new Date().getFullYear()}{" "}
+						© 2026{" "}
 						<span className="font-bold text-white">
 							DistrictFix
 						</span>
-						. All rights reserved.
 					</p>
 
 					<div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 sm:justify-end">
