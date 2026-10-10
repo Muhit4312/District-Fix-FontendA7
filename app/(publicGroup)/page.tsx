@@ -1,10 +1,19 @@
-import { Button } from "@/components/ui/button";
+import { HeroSection } from "./_components/hero-section";
+import { HomeCta } from "./_components/home-cta";
+import { HowItWorks } from "./_components/how-it-works";
+import { ServicesSection } from "./_components/services-section";
+import { WhyChooseUs } from "./_components/why-choose-us";
 
-export default function Home() {
-    return (
-        <div>
-            Hello DistrictFix
-            <Button>Click me</Button>
-        </div>
-    );
+
+
+export default function HomePage() {
+	return (
+		<>
+			<HeroSection />
+			<ServicesSection />
+			<HowItWorks />
+			<WhyChooseUs />
+			<HomeCta />
+		</>
+	);
 }
