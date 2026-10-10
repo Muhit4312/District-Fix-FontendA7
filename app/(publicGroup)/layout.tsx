@@ -1,3 +1,4 @@
+import { Footer } from "@/components/shared/footer";
 import { Header } from "@/components/shared/navbar";
 import { getMe } from "@/service/getMe";
 
@@ -11,6 +12,7 @@ export default async function PublicLayout({
         <div>
             <Header user={user}></Header>
             {children}
+            <Footer />
         </div>
     )
 

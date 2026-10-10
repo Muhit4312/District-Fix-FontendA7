@@ -58,8 +58,14 @@ export default function DashboardSidebar({
 		router.push(href);
 	};
 
-	const handleLogout = () => {
-		logout()
+	const handleLogout = async () => {
+		try {
+			await logout();
+			router.replace("/login");
+			router.refresh();
+		} catch (error) {
+			console.error("Logout failed:", error);
+		}
 	};
 
 	return (
@@ -160,7 +166,7 @@ export default function DashboardSidebar({
 					<SidebarMenuItem>
 						<SidebarMenuButton
 							tooltip="Logout"
-							onClick={handleLogout}
+							onClick={() => handleLogout()}
 						>
 							<LogOut className="size-4" />
 

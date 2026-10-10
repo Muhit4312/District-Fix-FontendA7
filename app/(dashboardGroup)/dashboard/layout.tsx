@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import DashboardContent from "./_components/dashboard-content";
+import { Footer } from "@/components/shared/footer";
 
 export default function DashboardLayout({
     children,
@@ -7,9 +8,13 @@ export default function DashboardLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <Suspense fallback={<DashboardLoading />}>
-            <DashboardContent>{children}</DashboardContent>
-        </Suspense>
+        <>
+            <Suspense fallback={<DashboardLoading />}>
+                <DashboardContent>{children}
+
+                </DashboardContent>
+            </Suspense>
+        </>
     );
 }
 

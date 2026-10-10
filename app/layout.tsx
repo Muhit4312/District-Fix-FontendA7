@@ -22,7 +22,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <TooltipProvider>
           <Providers>
             {children}
-            <Footer />
+            
           </Providers>
         </TooltipProvider>
 
