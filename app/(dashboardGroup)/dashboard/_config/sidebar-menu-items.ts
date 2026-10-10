@@ -32,6 +32,16 @@ export const sideMenuItems = {
 			icon: PlusCircle,
 		},
 		{
+			title: "Worker Application",
+			href: "/dashboard/customer/worker-application",
+			icon: BriefcaseBusiness,
+		},
+		{
+			title: "Service Holder Application",
+			href: "/dashboard/customer/service-holder-application",
+			icon: Building2,
+		},
+		{
 			title: "Payments",
 			href: "/dashboard/customer/payment",
 			icon: CreditCard,
@@ -138,7 +148,7 @@ export const sideMenuItems = {
 			href: "/dashboard/admin/service-holders/applications",
 			icon: FileCheck2,
 		},
-		
+
 	],
 
 	SUPER_ADMIN: [
