@@ -1,3 +1,4 @@
+import { AboutSection } from "./_components/about-section";
 import { HeroSection } from "./_components/hero-section";
 import { HomeCta } from "./_components/home-cta";
 import { HowItWorks } from "./_components/how-it-works";
@@ -10,6 +11,7 @@ export default function HomePage() {
 	return (
 		<>
 			<HeroSection />
+			<AboutSection />
 			<ServicesSection />
 			<HowItWorks />
 			<WhyChooseUs />

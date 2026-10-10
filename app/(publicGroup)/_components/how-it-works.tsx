@@ -49,7 +49,7 @@ export function HowItWorks() {
 						return (
 							<div
 								key={step.number}
-								className="relative rounded-2xl border border-slate-200 bg-white p-7"
+								className="relative rounded-2xl border-b-2 border-sky-200 bg-white p-7"
 							>
 								<div className="flex items-center justify-between">
 									<span className="text-3xl font-bold text-sky-100">
