@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { Toaster } from "sonner";
 import { Providers } from "@/provider/googleProvider";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { Footer } from "@/components/shared/footer";
 
 const robotoHeading = Roboto({ subsets: ['latin'], variable: '--font-heading' });
 
@@ -21,8 +22,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <TooltipProvider>
           <Providers>
             {children}
+            <Footer />
           </Providers>
         </TooltipProvider>
+
         <Toaster position="top-right" richColors />
       </body>
 
