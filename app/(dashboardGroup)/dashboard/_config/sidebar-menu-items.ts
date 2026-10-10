@@ -130,7 +130,7 @@ export const sideMenuItems = {
 		},
 		{
 			title: "Service Holders",
-			href: "/dashboard/admin/service-holders",
+			href: "/dashboard/admin/users?role=SERVICE_HOLDER",
 			icon: Building2,
 		},
 		{
@@ -159,7 +159,7 @@ export const sideMenuItems = {
 		},
 		{
 			title: "Service Holders",
-			href: "/dashboard/admin/service-holders",
+			href: "/dashboard/admin/users?role=SERVICE_HOLDER",
 			icon: Building2,
 		},
 		{
