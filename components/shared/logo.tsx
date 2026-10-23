@@ -16,7 +16,7 @@ export function Logo({ variant = "light" }: LogoProps) {
 			}`}
 		>
 			<div
-				className={`flex size-10 items-center justify-center rounded-xl shadow-lg ${
+				className={`flex size-12 items-center justify-center rounded-xl shadow-lg ${
 					isDark
 						? "bg-white shadow-white/10"
 						: "bg-sky-600 shadow-sky-600/20"
@@ -29,8 +29,8 @@ export function Logo({ variant = "light" }: LogoProps) {
 				/>
 			</div>
 
-			<div className="leading-none">
-				<p className="text-lg font-bold tracking-tight">
+			<div className="leading-none gap-1 flex flex-col">
+				<p className="text-[25px] font-bold tracking-tight">
 					District
 					<span
 						className={
