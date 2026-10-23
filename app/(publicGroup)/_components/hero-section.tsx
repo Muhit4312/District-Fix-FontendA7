@@ -1,7 +1,5 @@
-
 import Link from "next/link";
 import {
-  ArrowDownRight,
   ArrowRight,
   MapPin,
   Plug,
@@ -26,7 +24,7 @@ const services = [
 
 export function HeroSection() {
   return (
-    <section className="relative isolate overflow-hidden bg-slate-950">
+    <section className="relative isolate overflow-hidden bg-slate-950 text-white">
       {/* Background image */}
       <div
         className="absolute inset-0 -z-20 bg-cover bg-center"
@@ -36,75 +34,73 @@ export function HeroSection() {
         }}
       />
 
-      {/* Dark overlay */}
-      <div className="absolute inset-0 -z-10 bg-black/75" />
+      {/* Overlays */}
+      <div className="absolute inset-0 -z-10 bg-slate-950/75" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-950/65" />
 
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-black via-slate-950/85 to-slate-950/50" />
+      {/* Decorative glow */}
+      <div className="absolute -right-40 top-1/4 -z-10 size-80 rounded-full bg-[#0084D1]/15 blur-[100px] sm:size-[450px]" />
 
-      {/* Blue lighting effect */}
-      <div className="absolute -right-40 top-10 -z-10 size-[500px] rounded-full bg-blue-500/15 blur-[120px]" />
-
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid min-h-[600px] items-center gap-12 py-16 lg:min-h-[650px] lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:py-20">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid items-center gap-10 py-14 sm:gap-12 sm:py-16 lg:min-h-[620px] lg:grid-cols-[1.1fr_0.9fr] lg:gap-10 lg:py-20 xl:gap-16">
           {/* Left content */}
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-500/10 px-4 py-2 text-sm font-medium text-blue-200">
-              <span className="size-2 rounded-full bg-blue-400 shadow-[0_0_12px_#60a5fa]" />
-              Home service, reimagined
+          <div className="mx-auto w-full max-w-2xl lg:mx-0">
+            <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-[#0084D1]/40 bg-[#0084D1]/10 px-3 py-2 text-xs font-medium text-blue-200 sm:px-4 sm:text-sm">
+              <span className="size-2 shrink-0 rounded-full bg-[#0084D1]" />
+              <span>Home service, reimagined</span>
             </div>
 
-            <h1 className="mt-8 text-5xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-6xl lg:text-7xl">
+            <h1 className="mt-6 text-[2.65rem] font-extrabold leading-[1.08] tracking-tight sm:mt-7 sm:text-5xl md:text-6xl lg:text-[3.5rem] xl:text-[4rem]">
               Your home.
               <br />
               Your comfort.
               <br />
-              <span className="text-blue-400">
-                Our expertise.
-              </span>
+              <span className="text-[#42B5F5]">Our expertise.</span>
             </h1>
 
-            <p className="mt-6 max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
+            <p className="mt-5 max-w-xl text-sm leading-7 text-slate-300 sm:mt-6 sm:text-base sm:leading-8 lg:text-lg">
               From unexpected pipe leaks to electrical faults,
               DistrictFix connects your service request with an
               organized team in your district.
             </p>
 
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            {/* Buttons: content-sized on every screen */}
+            <div className="mt-7 flex flex-wrap items-center gap-3 sm:mt-8">
               <Link
                 href="/login"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-blue-600 px-6 font-semibold text-white shadow-lg shadow-blue-950/40 transition hover:bg-blue-500"
+                className="inline-flex min-h-11 w-fit items-center justify-center gap-2 rounded-lg bg-[#0084D1] px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-black/20 transition-colors hover:bg-[#006FB3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 sm:min-h-12 sm:px-6 sm:text-base"
               >
-                Request a service
-                <ArrowRight className="size-4" />
+                Request service
+                
               </Link>
 
               <Link
                 href="/services"
-                className="inline-flex h-12 items-center justify-center rounded-lg border border-white/25 bg-white/5 px-6 font-semibold text-white backdrop-blur-sm transition hover:bg-white/10"
+                className="inline-flex min-h-11 w-fit items-center justify-center rounded-lg border border-white/25 bg-white/5 px-4 py-2.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 sm:min-h-12 sm:px-6 sm:text-base"
               >
                 Explore services
               </Link>
             </div>
 
-            <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 border-t border-white/15 pt-6 text-sm text-slate-300">
+            {/* Highlights */}
+            <div className="mt-8 flex flex-col gap-3 border-t border-white/15 pt-5 text-sm text-slate-300 sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-3 sm:pt-6">
               <span className="inline-flex items-center gap-2">
-                <MapPin className="size-4 text-blue-400" />
+                <MapPin className="size-4 shrink-0 text-[#42B5F5]" />
                 District-based requests
               </span>
 
               <span className="inline-flex items-center gap-2">
-                <Zap className="size-4 text-blue-400" />
+                <Zap className="size-4 shrink-0 text-[#42B5F5]" />
                 Organized worker assignment
               </span>
             </div>
           </div>
 
           {/* Right service cards */}
-          <div className="lg:pl-8">
-            <div className="mb-5 flex items-center gap-3">
-              <span className="h-px w-10 bg-blue-400" />
-              <p className="text-xs font-bold uppercase tracking-[0.25em] text-blue-300">
+          <div className="mx-auto w-full max-w-xl lg:ml-auto lg:max-w-none lg:pl-2 xl:pl-6">
+            <div className="mb-4 flex items-center gap-3 sm:mb-5">
+              <span className="h-px w-8 shrink-0 bg-[#42B5F5] sm:w-10" />
+              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-blue-200 sm:text-xs sm:tracking-[0.25em]">
                 What can we fix for you?
               </p>
             </div>
@@ -117,51 +113,51 @@ export function HeroSection() {
                   <Link
                     key={service.title}
                     href={service.href}
-                    className="group flex items-center gap-5 rounded-xl border border-white/15 bg-black/25 p-5 backdrop-blur-md transition duration-300 hover:border-blue-400/60 hover:bg-blue-950/40 sm:p-6"
+                    className="group flex min-w-0 items-center gap-3 rounded-xl border border-white/15 bg-slate-950/45 p-4 backdrop-blur-md transition duration-300 hover:border-[#0084D1]/70 hover:bg-[#0084D1]/10 sm:gap-5 sm:p-5 lg:p-6"
                   >
-                    <div className="flex size-14 shrink-0 items-center justify-center rounded-xl border border-blue-400/20 bg-blue-500/10 text-blue-300 transition group-hover:bg-blue-500 group-hover:text-white">
-                      <Icon className="size-6" />
+                    <div className="flex size-11 shrink-0 items-center justify-center rounded-lg border border-[#0084D1]/30 bg-[#0084D1]/15 text-blue-200 transition-colors group-hover:bg-[#0084D1] group-hover:text-white sm:size-14 sm:rounded-xl">
+                      <Icon className="size-5 sm:size-6" />
                     </div>
 
                     <div className="min-w-0 flex-1">
-                      <p className="text-xs font-medium tracking-widest text-slate-400">
+                      <p className="text-[10px] font-medium tracking-widest text-slate-400 sm:text-xs">
                         SERVICE 0{index + 1}
                       </p>
 
-                      <h2 className="mt-1 text-xl font-bold text-white">
+                      <h2 className="mt-1 text-lg font-bold text-white sm:text-xl">
                         {service.title}
                       </h2>
 
-                      <p className="mt-1 text-sm text-slate-400">
+                      <p className="mt-1 text-xs leading-5 text-slate-400 sm:text-sm">
                         {service.description}
                       </p>
                     </div>
 
-                    <ArrowRight className="size-5 shrink-0 text-slate-500 transition group-hover:translate-x-1 group-hover:text-blue-300" />
+                    <ArrowRight className="size-5 shrink-0 text-slate-500 transition-transform group-hover:translate-x-1 group-hover:text-blue-300" />
                   </Link>
                 );
               })}
             </div>
 
-            <div className="mt-6 flex items-start gap-3 rounded-xl border border-white/10 bg-white/[0.04] p-5">
-              <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-emerald-400/10 text-emerald-300">
+            
+            <div className="mt-4 flex items-start gap-3 rounded-xl border border-white/10 bg-white/[0.05] p-4 sm:mt-5 sm:gap-4 sm:p-5">
+              <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#0084D1]/15 text-blue-200">
                 <MapPin className="size-5" />
               </div>
 
-              <div>
-                <h3 className="font-semibold text-white">
+              <div className="min-w-0">
+                <h3 className="text-sm font-semibold text-white sm:text-base">
                   Service organized by district
                 </h3>
-                <p className="mt-1 text-sm leading-6 text-slate-400">
-                  Submit your request and let the relevant service
-                  team coordinate the assignment.
+
+                <p className="mt-1 text-xs leading-6 text-slate-400 sm:text-sm">
+                  Submit your request and let the relevant service team
+                  coordinate the assignment.
                 </p>
               </div>
             </div>
           </div>
         </div>
-
-        
       </div>
     </section>
   );
