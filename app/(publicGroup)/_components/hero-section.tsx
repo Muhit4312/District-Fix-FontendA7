@@ -66,17 +66,18 @@ export function HeroSection() {
 
             {/* Buttons: content-sized on every screen */}
             <div className="mt-7 flex flex-wrap items-center gap-3 sm:mt-8">
+
               <Link
                 href="/login"
-                className="inline-flex min-h-11 w-fit items-center justify-center gap-2 rounded-lg bg-[#0084D1] px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-black/20 transition-colors hover:bg-[#006FB3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 sm:min-h-12 sm:px-6 sm:text-base"
+                className="inline-flex min-h-11 w-fit items-center justify-center rounded-lg border border-[#0084D1] bg-[#0084D1] px-4 py-2.5 text-sm font-semibold text-white transition-all duration-500 ease-in-out hover:border-white/25 hover:bg-white/5 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 sm:min-h-12 sm:px-6 sm:text-base"
               >
                 Request service
-                
               </Link>
+
 
               <Link
                 href="/services"
-                className="inline-flex min-h-11 w-fit items-center justify-center rounded-lg border border-white/25 bg-white/5 px-4 py-2.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 sm:min-h-12 sm:px-6 sm:text-base"
+                className="group relative isolate inline-flex min-h-11 w-fit items-center justify-center overflow-hidden rounded-lg border border-white/25 bg-white/5 px-4 py-2.5 text-sm font-semibold text-white backdrop-blur-sm transition-colors duration-500 hover:border-[#0084D1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 sm:min-h-12 sm:px-6 sm:text-base before:absolute before:inset-0 before:-z-10 before:-translate-x-full before:bg-[#0084D1] before:transition-transform before:duration-500 before:ease-in-out hover:before:translate-x-0"
               >
                 Explore services
               </Link>
@@ -139,7 +140,7 @@ export function HeroSection() {
               })}
             </div>
 
-            
+
             <div className="mt-4 flex items-start gap-3 rounded-xl border border-white/10 bg-white/[0.05] p-4 sm:mt-5 sm:gap-4 sm:p-5">
               <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-[#0084D1]/15 text-blue-200">
                 <MapPin className="size-5" />
