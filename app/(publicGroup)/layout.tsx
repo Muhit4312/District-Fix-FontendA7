@@ -1,3 +1,4 @@
+import { AIChatbot } from "@/components/shared/ai-chatbot";
 import { Footer } from "@/components/shared/footer";
 import { Header } from "@/components/shared/navbar";
 import { getMe } from "@/service/getMe";
@@ -13,6 +14,7 @@ export default async function PublicLayout({
             <Header user={user}></Header>
             {children}
             <Footer />
+            <AIChatbot />
         </div>
     )
 
