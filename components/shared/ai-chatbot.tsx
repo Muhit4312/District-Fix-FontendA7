@@ -3,6 +3,7 @@
 
 import { useState, type FormEvent } from "react";
 import { MessageCircle, Send, X, LoaderCircle } from "lucide-react";
+import { sendAIMessage } from "@/service/ai.service";
 
 type ChatMessage = {
     role: "user" | "assistant";
@@ -21,7 +22,9 @@ export function AIChatbot() {
         },
     ]);
 
-    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (
+        event: FormEvent<HTMLFormElement>,
+    ) => {
         event.preventDefault();
 
         const text = message.trim();
@@ -32,28 +35,12 @@ export function AIChatbot() {
             ...previous,
             { role: "user", content: text },
         ]);
+
         setMessage("");
         setIsLoading(true);
 
         try {
-            const response = await fetch(
-                `${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/v1/ai/chat`,
-                {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({ message: text }),
-                },
-            );
-
-            const result = await response.json();
-
-            if (!response.ok || !result.success) {
-                throw new Error(
-                    result.message || "Unable to get an AI response.",
-                );
-            }
+            const result = await sendAIMessage(text);
 
             setMessages((previous) => [
                 ...previous,
@@ -62,7 +49,9 @@ export function AIChatbot() {
                     content: result.data.reply,
                 },
             ]);
-        } catch {
+        } catch (error) {
+            console.error("AI chatbot error:", error);
+
             setMessages((previous) => [
                 ...previous,
                 {
@@ -107,16 +96,18 @@ export function AIChatbot() {
                         {messages.map((item, index) => (
                             <div
                                 key={`${item.role}-${index}`}
-                                className={`flex ${item.role === "user"
-                                    ? "justify-end"
-                                    : "justify-start"
-                                    }`}
+                                className={`flex ${
+                                    item.role === "user"
+                                        ? "justify-end"
+                                        : "justify-start"
+                                }`}
                             >
                                 <p
-                                    className={`max-w-[85%] whitespace-pre-wrap break-words rounded-2xl px-3 py-2 text-sm ${item.role === "user"
-                                        ? "rounded-br-sm bg-[#0084D1] text-white"
-                                        : "rounded-bl-sm border border-slate-200 bg-white text-slate-800"
-                                        }`}
+                                    className={`max-w-[85%] whitespace-pre-wrap break-words rounded-2xl px-3 py-2 text-sm ${
+                                        item.role === "user"
+                                            ? "rounded-br-sm bg-[#0084D1] text-white"
+                                            : "rounded-bl-sm border border-slate-200 bg-white text-slate-800"
+                                    }`}
                                 >
                                     {item.content}
                                 </p>
@@ -164,9 +155,8 @@ export function AIChatbot() {
 
             <button
                 type="button"
-                onClick={() => {
-                    setIsOpen((previous) => !previous);
-                }}
+                onClick={() => setIsOpen((previous) => !previous)}
+                aria-label={isOpen ? "Close chatbot" : "Open chatbot"}
                 className="ml-auto flex size-14 items-center justify-center rounded-full bg-[#0084D1] text-white shadow-lg"
             >
                 {isOpen ? <X size={25} /> : <MessageCircle size={25} />}
