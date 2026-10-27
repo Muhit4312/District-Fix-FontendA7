@@ -19,6 +19,7 @@ import { Textarea } from "@/components/ui/textarea";
 
 import type { District } from "../_actions/district.action";
 import { createServiceRequest } from "../_actions/create-service.action";
+import AIRequestSummary from "./ai-request-summary";
 
 type CreateServiceFormProps = {
 	districts: District[];
@@ -207,18 +208,16 @@ export default function CreateServiceForm({
 											"PLUMBING",
 										)
 									}
-									className={`flex items-center gap-3 rounded-xl border px-4 py-3.5 text-left transition-all ${
-										formData.serviceType === "PLUMBING"
+									className={`flex items-center gap-3 rounded-xl border px-4 py-3.5 text-left transition-all ${formData.serviceType === "PLUMBING"
 											? "border-sky-500 bg-sky-50/60 ring-1 ring-sky-500"
 											: "border-slate-200 hover:border-slate-300 hover:bg-slate-50"
-									}`}
+										}`}
 								>
 									<div
-										className={`flex size-9 shrink-0 items-center justify-center rounded-lg ${
-											formData.serviceType === "PLUMBING"
+										className={`flex size-9 shrink-0 items-center justify-center rounded-lg ${formData.serviceType === "PLUMBING"
 												? "bg-sky-100 text-sky-600"
 												: "bg-slate-100 text-slate-500"
-										}`}
+											}`}
 									>
 										<Wrench className="size-4.5" />
 									</div>
@@ -249,19 +248,17 @@ export default function CreateServiceForm({
 											"ELECTRICAL",
 										)
 									}
-									className={`flex items-center gap-3 rounded-xl border px-4 py-3.5 text-left transition-all ${
-										formData.serviceType === "ELECTRICAL"
+									className={`flex items-center gap-3 rounded-xl border px-4 py-3.5 text-left transition-all ${formData.serviceType === "ELECTRICAL"
 											? "border-sky-500 bg-sky-50/60 ring-1 ring-sky-500"
 											: "border-slate-200 hover:border-slate-300 hover:bg-slate-50"
-									}`}
+										}`}
 								>
 									<div
-										className={`flex size-9 shrink-0 items-center justify-center rounded-lg ${
-											formData.serviceType ===
-											"ELECTRICAL"
+										className={`flex size-9 shrink-0 items-center justify-center rounded-lg ${formData.serviceType ===
+												"ELECTRICAL"
 												? "bg-sky-100 text-sky-600"
 												: "bg-slate-100 text-slate-500"
-										}`}
+											}`}
 									>
 										<Zap className="size-4.5" />
 									</div>
@@ -343,6 +340,13 @@ export default function CreateServiceForm({
 								maxLength={1000}
 								disabled={isSubmitting}
 								className="resize-none rounded-lg border-slate-200 bg-white text-sm shadow-none placeholder:text-slate-400 focus-visible:border-sky-500 focus-visible:ring-4 focus-visible:ring-sky-500/10"
+							/>
+
+
+							<AIRequestSummary
+								description={formData.description}
+								disabled={isSubmitting}
+								onUseSummary={(summary) => updateField("description", summary)}
 							/>
 						</div>
 
